@@ -10,5 +10,9 @@ class Model_Product extends Model_Table
         $this->addField('name');
         $this->addField('member_price')->type('money');
         $this->addField('guest_price')->type('money');
+        
+        
+        $this->hasMany('Order');
+        
     }
 }

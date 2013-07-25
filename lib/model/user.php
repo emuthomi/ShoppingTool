@@ -15,5 +15,7 @@ class Model_User extends Model_Table
         $this->addField('is_admin')->type('boolean');
         $this->addField('is_member')->type('boolean');
         
+        $this->hasMany('Cart');
+        
     }
 }

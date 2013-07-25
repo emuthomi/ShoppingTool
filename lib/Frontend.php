@@ -23,6 +23,7 @@ class Frontend extends ApiFrontend {
             if ($is_admin)
             {
                 $menu->addMenuItem('admin');
+                $menu->addMenuItem('consumptions');
             }
             $menu->addMenuItem('logout');
         

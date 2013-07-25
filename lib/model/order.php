@@ -2,15 +2,17 @@
 
 class Model_Order extends Model_Table
 {
+    public $table = 'order';
+    
     function init()
     {
         parent::init();
         
         $this->addField('quantity');
-        $this->addField('unit_price');
+        $this->addField('unit_price')->type('money');
         
-        $this->hasMany('Product');
-        $this->hasMany('Cart');
+        $this->hasOne('Product');
+        $this->hasOne('Cart');
         
     }
 }
