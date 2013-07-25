@@ -11,7 +11,7 @@ class Model_Order extends Model_Table
         $this->addField('quantity');
         $this->addField('unit_price')->type('money');
         
-        $this->hasOne('Product');
+        $this->hasOne('Product', null, 'name');
         $this->hasOne('Cart');
         
     }

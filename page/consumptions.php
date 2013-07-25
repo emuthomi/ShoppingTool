@@ -29,7 +29,8 @@ class Page_Consumptions extends Page
                             ->univ()->alert('Success')->execute();
                 }
                 
-                //$crud->grid->addColumn('Button', 'detail', 'Details');
+                
+                $crud->grid->addColumn('expander','details');
             }
             
             
