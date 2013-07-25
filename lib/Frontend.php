@@ -12,31 +12,29 @@ class Frontend extends ApiFrontend {
 
         $this->add('Auth')->setModel('User');
         $this->auth->allowPage(array('register', 'index'));
-        $this->auth->check();
-
-        $menu =$this->add('Menu',null,'Menu');
+ 
         
-        if ($this->auth->isLoggedIn)
+        if ($this->auth->isLoggedIn())
         {
-            
+            $menu =$this->add('Menu',null,'Menu');
             $menu->addMenuItem('index','Welcome');
-                
         
-        $is_admin = $this->api->auth->model['is_admin'];
-        if ($is_admin)
-        {
-            $menu->addMenuItem('admin');
-        }
+            $is_admin = $this->api->auth->model['is_admin'];
+            if ($is_admin)
+            {
+                $menu->addMenuItem('admin');
+            }
+            $menu->addMenuItem('logout');
         
-        $menu->addMenuItem('logout');
         }else
         {
-            $menu->addMenuItem('index')
+            $menu =$this->add('Menu',null,'Menu')
+            ->addMenuItem('index')
             ->addMenuItem('login')
             ->addMenuItem('register');
         }
         
-        
+        $this->auth->check();
         
 
     }
