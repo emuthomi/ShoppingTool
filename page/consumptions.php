@@ -30,9 +30,14 @@ class Page_Consumptions extends Page
                 }
                 
                 
-                $crud->grid->addColumn('expander','details');
+                $ex = $crud->grid->addColumn('expander','details');
+                $ex->debug();
             }
             
+            if($crud->form)
+            {
+                $crud->form->addField('Line', 'line');
+            }
             
         }
         

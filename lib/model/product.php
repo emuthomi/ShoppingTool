@@ -15,4 +15,9 @@ class Model_Product extends Model_Table
         $this->hasMany('Order');
         
     }
+    
+    function getPrice()
+    {
+        
+    }
 }
